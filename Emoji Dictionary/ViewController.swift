@@ -29,9 +29,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         cell.textLabel?.text = emojis[indexPath.row]
         return cell
     }
+    
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("emjoiDefinition", sender: "👣")
+        let emoji = emojis[indexPath.row]
+        performSegueWithIdentifier("emjoiDefinition", sender: emoji)
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        print(sender)
+    }
+    
     
         override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
