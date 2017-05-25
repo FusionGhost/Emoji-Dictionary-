@@ -38,6 +38,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         print(sender)
+        let defVC = segue.destinationViewController as! DefinitionViewController
+        defVC.emoji = sender as! String
     }
     
     
